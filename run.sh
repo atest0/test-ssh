@@ -2,6 +2,9 @@
 
 set -e
 
+service nginx start
+service php5-fpm start
+
 
 
 if [ "${AUTHORIZED_KEYS}" != "**None**" ]; then
