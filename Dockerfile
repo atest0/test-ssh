@@ -18,10 +18,6 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y vim nano curl wget zip bui
 	php5-cli php5-cgi php5-fpm php5-mcrypt php5-mysql
 RUN apt-get clean
 
-ADD nginx_default /etc/nginx/sites-available/default
-RUN mkdir /var/nginx/www
-RUN chmod 777 /var/nginx/www
-
 ADD run.sh /run.sh
 RUN chmod +x /*.sh
 
