@@ -17,7 +17,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y vim nano curl wget zip bui
 	nginx \
 	php5-cli php5-cgi php5-fpm php5-mcrypt php5-mysql
 
-RUN apt-get install -y apache2 \
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y apache2 \
 	mariadb-server \
 	php5 \
 	php5-gd \
