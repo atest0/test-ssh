@@ -16,6 +16,22 @@ RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y vim nano curl wget zip build-essential git \
 	nginx \
 	php5-cli php5-cgi php5-fpm php5-mcrypt php5-mysql
+
+RUN apt-get install -y apache2 \
+	mariadb-server \
+	php5 \
+	php5-gd \
+	php5-mysql \
+	php5-curl \
+	php-apc \
+	zlibc \
+	zlib1g \
+	zlib1g-dev \
+	libpcre3 \
+	libpcre3-dev \
+	libapache2-mod-php5 \
+	zip
+
 RUN apt-get clean
 
 ADD run.sh /run.sh
