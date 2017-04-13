@@ -44,6 +44,8 @@ ADD run.sh /run.sh
 RUN chmod +x /*.sh
 
 
+RUN echo "syntax on\nset number\nset ruler\n" >> /etc/vim/vimrc
+
 EXPOSE 80 8080 22
 
 ENTRYPOINT ["/run.sh"]
