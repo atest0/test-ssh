@@ -35,7 +35,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y apache2 \
 RUN apt-get clean
 
 RUN wget -qP ~/tmp https://files.phpmyadmin.net/phpMyAdmin/4.7.0/phpMyAdmin-4.7.0-all-languages.zip
-RUN unzip -jqod ~/tmp/pma ~/tmp/phpMyAdmin*
+RUN unzip -qod ~/tmp/pma ~/tmp/phpMyAdmin*
 RUN mv ~/tmp/pma/p* /var/www/html/pma
 RUN rm -rf ~/tmp
 
