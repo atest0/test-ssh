@@ -34,6 +34,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y apache2 \
 
 RUN apt-get clean
 
+ADD nginx_default /etc/nginx/sites-available/default
+
 ADD run.sh /run.sh
 RUN chmod +x /*.sh
 
