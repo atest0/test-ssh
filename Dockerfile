@@ -35,7 +35,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y apache2 \
 RUN apt-get clean
 
 RUN wget -aP ~/tmp https://files.phpmyadmin.net/phpMyAdmin/4.7.0/phpMyAdmin-4.7.0-all-languages.zip
-RUN unzip -qd /var/www/html/pma ~/tmp/phpMyAdmin*
+RUN unzip -jqd /var/www/html/pma ~/tmp/phpMyAdmin*
 RUN rm -rf ~/tmp
 
 ADD nginx_default /etc/nginx/sites-available/default
