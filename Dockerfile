@@ -34,6 +34,27 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y apache2 \
 
 RUN apt-get clean
 
+
+RUN mkdir /usr/local/pro
+RUN mkdir ~/tmp && cd ~/tmp
+
+RUN wget -O a https://dl.google.com/go/go1.10.2.linux-amd64.tar.gz && \
+        mkdir /usr/local/pro/go && \
+        tar xzf a -C /usr/local/pro/go --strip-components 1 && \
+        rm a && \
+        echo "export GOPATH=~/.zo/go" >> /etc/bashrc && \
+        echo "export PATH=$PATH:/usr/local/pro/go/bin" >> /etc/bashrc && \
+        source /etc/bashrc
+
+RUN wget -O a https://nodejs.org/dist/v8.11.1/node-v8.11.1-linux-x64.tar.xz && \
+        mkdir /usr/local/pro/node && \
+        tar Jxf a -C /usr/local/pro/node --strip-components 1 && \
+        rm a && \
+        echo "export PATH=$PATH:/usr/local/pro/node/bin" >> /etc/bashrc && \
+        source /etc/bashrc
+
+RUN cd ~ && rm -rf tmp
+
 RUN wget -qP ~/tmp https://files.phpmyadmin.net/phpMyAdmin/4.7.0/phpMyAdmin-4.7.0-all-languages.zip
 RUN unzip -qod ~/tmp/pma ~/tmp/phpMyAdmin*
 RUN mv ~/tmp/pma/p* /var/www/html/pma
