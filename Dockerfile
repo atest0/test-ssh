@@ -23,7 +23,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y apache2 \
 	php7.0-gd \
 	php7.0-mysql \
 	php7.0-curl \
-	php-apc \
+	php7.0-apc \
 	zlibc \
 	zlib1g \
 	zlib1g-dev \
