@@ -15,21 +15,21 @@ ENV AUTHORIZED_KEYS **None**
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y vim nano curl wget zip build-essential git \
 	nginx \
-	php7-cli php7-cgi php7-fpm php7-mcrypt php7-mysql
+	php7.0-cli php7.0-cgi php7.0-fpm php7.0-mcrypt php7.0-mysql
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y apache2 \
 	mariadb-server \
-	php7 \
-	php7-gd \
-	php7-mysql \
-	php7-curl \
+	php7.0 \
+	php7.0-gd \
+	php7.0-mysql \
+	php7.0-curl \
 	php-apc \
 	zlibc \
 	zlib1g \
 	zlib1g-dev \
 	libpcre3 \
 	libpcre3-dev \
-	libapache2-mod-php7 \
+	libapache2-mod-php7.0 \
 	zip
 
 RUN apt-get clean
