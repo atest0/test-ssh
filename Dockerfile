@@ -34,6 +34,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y apache2 \
 
 RUN apt-get clean
 
+SHELL ["/bin/bash", "-c"]
 
 RUN mkdir /usr/local/pro
 RUN mkdir ~/tmp && cd ~/tmp
