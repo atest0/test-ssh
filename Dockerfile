@@ -15,21 +15,21 @@ ENV AUTHORIZED_KEYS **None**
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y vim nano curl wget zip build-essential git \
 	nginx \
-	php5-cli php5-cgi php5-fpm php5-mcrypt php5-mysql
+	php7-cli php7-cgi php7-fpm php7-mcrypt php7-mysql
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y apache2 \
 	mariadb-server \
-	php5 \
-	php5-gd \
-	php5-mysql \
-	php5-curl \
+	php7 \
+	php7-gd \
+	php7-mysql \
+	php7-curl \
 	php-apc \
 	zlibc \
 	zlib1g \
 	zlib1g-dev \
 	libpcre3 \
 	libpcre3-dev \
-	libapache2-mod-php5 \
+	libapache2-mod-php7 \
 	zip
 
 RUN apt-get clean
@@ -38,7 +38,7 @@ RUN apt-get clean
 RUN mkdir /usr/local/pro
 RUN mkdir ~/tmp && cd ~/tmp
 
-RUN wget -O a https://dl.google.com/go/go1.10.2.linux-amd64.tar.gz && \
+RUN wget -O a https://dl.google.com/go/go1.12.5.linux-amd64.tar.gz && \
         mkdir /usr/local/pro/go && \
         tar xzf a -C /usr/local/pro/go --strip-components 1 && \
         rm a && \
@@ -46,7 +46,7 @@ RUN wget -O a https://dl.google.com/go/go1.10.2.linux-amd64.tar.gz && \
         echo "export PATH=$PATH:/usr/local/pro/go/bin" >> /etc/bashrc && \
         source /etc/bashrc
 
-RUN wget -O a https://nodejs.org/dist/v8.11.1/node-v8.11.1-linux-x64.tar.xz && \
+RUN wget -O a https://nodejs.org/dist/v10.16.0/node-v10.16.0-linux-x64.tar.xz && \
         mkdir /usr/local/pro/node && \
         tar Jxf a -C /usr/local/pro/node --strip-components 1 && \
         rm a && \
