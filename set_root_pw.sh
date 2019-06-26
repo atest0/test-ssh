@@ -10,6 +10,11 @@ _word=$( [ ${ROOT_PASS} ] && echo "preset" || echo "random" )
 echo "=> Setting a ${_word} password to the root user"
 echo "root:$PASS" | chpasswd
 
+USER=litchi
+useradd -m $USER >&/dev/null
+echo "$USER ALL=(ALL) ALL" >> /etc/sudoers
+echo "$USER:$PASS" | chpasswd
+
 echo "=> Done!"
 touch /.root_pw_set
 
