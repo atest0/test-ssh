@@ -14,16 +14,10 @@ ENV AUTHORIZED_KEYS **None**
 
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y vim nano curl wget zip build-essential git \
-	nginx \
-	php7.0-cli php7.0-cgi php7.0-fpm php7.0-mcrypt php7.0-mysql
+	nginx
 
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y apache2 \
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y \
 	mariadb-server \
-	php7.0 \
-	php7.0-gd \
-	php7.0-mysql \
-	php7.0-curl \
-	php7.0-apc \
 	zlibc \
 	zlib1g \
 	zlib1g-dev \
@@ -47,7 +41,7 @@ RUN wget -O a https://dl.google.com/go/go1.13.linux-amd64.tar.gz && \
         echo 'export PATH=$PATH:/usr/local/pro/go/bin' >> /etc/bashrc && \
 	source /etc/bashrc
 
-RUN wget -O a https://nodejs.org/dist/v10.16.0/node-v10.16.0-linux-x64.tar.xz && \
+RUN wget -O a https://nodejs.org/dist/v10.16.3/node-v10.16.3-linux-x64.tar.xz && \
         mkdir /usr/local/pro/node && \
         tar Jxf a -C /usr/local/pro/node --strip-components 1 && \
         rm a && \
