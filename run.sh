@@ -4,7 +4,6 @@ set -e
 
 service mysql start
 service nginx start
-service php7.0-fpm start
 
 
 
