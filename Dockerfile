@@ -23,7 +23,6 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y \
 	zlib1g-dev \
 	libpcre3 \
 	libpcre3-dev \
-	libapache2-mod-php7.0 \
 	zip
 
 RUN apt-get clean
