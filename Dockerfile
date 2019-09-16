@@ -32,20 +32,20 @@ SHELL ["/bin/bash", "-c"]
 RUN mkdir /usr/local/pro
 RUN mkdir ~/tmp && cd ~/tmp
 
-RUN wget -O a https://dl.google.com/go/go1.13.linux-amd64.tar.gz && \
+RUN wget -qO a https://dl.google.com/go/go1.13.linux-amd64.tar.gz && \
         mkdir /usr/local/pro/go && \
         tar xzf a -C /usr/local/pro/go --strip-components 1 && \
         rm a && \
         echo 'export GOPATH=~/.zo/go' >> /etc/bashrc && \
-        echo 'export PATH=$PATH:/usr/local/pro/go/bin' >> /etc/bashrc && \
-	source /etc/bashrc
+        echo 'export PATH=$PATH:/usr/local/pro/go/bin' >> /etc/bash.bashrc && \
+	source /etc/bash.bashrc
 
-RUN wget -O a https://nodejs.org/dist/v10.16.3/node-v10.16.3-linux-x64.tar.xz && \
+RUN wget -qO a https://nodejs.org/dist/v10.16.3/node-v10.16.3-linux-x64.tar.xz && \
         mkdir /usr/local/pro/node && \
         tar Jxf a -C /usr/local/pro/node --strip-components 1 && \
         rm a && \
-        echo 'export PATH=$PATH:/usr/local/pro/node/bin' >> /etc/bashrc && \
-	source /etc/bashrc
+        echo 'export PATH=$PATH:/usr/local/pro/node/bin' >> /etc/bash.bashrc && \
+	source /etc/bash.bashrc
 
 RUN cd ~ && rm -rf tmp
 
