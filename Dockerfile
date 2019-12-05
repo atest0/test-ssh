@@ -25,6 +25,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y \
 	libpcre3-dev \
 	zip
 
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y imagemagick
+
 RUN apt-get clean
 
 SHELL ["/bin/bash", "-c"]
